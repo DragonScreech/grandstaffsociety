@@ -26,7 +26,7 @@ export const Modal = ({ setModal, pdf }) => {
         </div>
 
         {pdf !== null && (
-          <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.8.162/build/pdf.worker.min.js">
+          <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.6.172/build/pdf.worker.min.js">
             <Viewer fileUrl={pdf} plugins={[defaultLayoutPluginInstance]} />;
           </Worker>
         )}
