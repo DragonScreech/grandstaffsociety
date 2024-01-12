@@ -1,0 +1,724 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+$primary-font: system-ui;
+$text-color: rgb(29, 29, 29);
+$background-color: rgb(235, 235, 235);
+$panel-bg-color: rgb(226, 226, 226);
+$button-bg-color: purple;
+$button-hover-color: rgb(88, 0, 88);
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.backshadow {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .custom-modal {
+        width: 900px;
+        height: 600px;
+        background-color: #ffffff;
+        position: relative;
+    }
+}
+
+.delete-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: red;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    position: absolute;
+    top: -15px;
+    right: -5px;
+    font-family: 'Raleway', sans-serif;
+    z-index: 2;
+}
+
+.container {
+    //padding: 20px;
+    text-align: center;
+    font-family: $primary-font;
+    background-color: $background-color;
+    height: 100vh;
+    overflow: auto;
+    //justify-content: center;
+    //align-items: center;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        justify-content: center;
+        align-self: center;
+        padding: 10px;
+        background-color: $panel-bg-color;
+        margin: 20px auto;
+        width: 50%;
+        border: 1px solid purple;
+
+        @media screen and (max-width: 768px) {
+            /* On screens with a maximum width of 768px (e.g., tablets and smaller), use auto-fit for responsive layout */
+            width: 100%;
+        }
+
+        h2 {
+            color: purple;
+        }
+    }
+
+    .button-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(100px, 1fr));
+        grid-gap: 1rem;
+        justify-content: center;
+
+        .letter-btn {
+            cursor: pointer;
+            color: $text-color;
+            font-size: 1.5rem;
+            margin: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* On screens with a maximum width of 768px (e.g., tablets and smaller), use auto-fit for responsive layout */
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+    }
+
+    form {
+        margin-bottom: 20px;
+
+        select {
+            margin-right: 10px;
+            padding: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: $button-bg-color;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $button-hover-color;
+            }
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        background-color: $background-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        //margin-top: 50px;
+
+        li {
+            display: flex;
+            border-radius: 10px;
+            justify-content: center;
+            padding: 10px;
+            background-color: $panel-bg-color;
+            margin-bottom: 10px;
+            cursor: pointer;
+            width: 50%;
+            border: 1px solid purple;
+
+            &:hover {
+                background-color: #d1d1d1;
+            }
+        }
+    }
+}
+
+.songPage {
+    font-family: $primary-font;
+    background-color: $background-color;
+    color: $text-color;
+    min-height: 100%;
+    padding-bottom: 16px;
+
+    .center {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        padding: 50px;
+    }
+
+    .panel {
+        display: flex;
+        flex-direction: column;
+        background-color: $panel-bg-color;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px;
+        flex: 1;
+        width: 50%;
+        border: 1px solid;
+        border-color: purple;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            color: purple;
+        }
+    }
+
+    .panels {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form {
+        margin: 20px 0;
+
+        p {
+            text-align: center;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+
+            select {
+                width: 200px;
+                height: 40px;
+                margin: 0 20px;
+            }
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            background-color: $button-bg-color;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            font-size: 1.3rem;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: $button-hover-color;
+                transform: scale(1.1);
+                transform: translateY(-3px);
+                box-shadow: 0px 10px 20px rgba(67, 0, 118, 0.502);
+            }
+        }
+    }
+
+    button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        color: white;
+        background-color: $button-bg-color;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        font-size: 1.3rem;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: $button-hover-color;
+            transform: scale(1.1);
+            transform: translateY(-3px);
+            box-shadow: 0px 10px 20px rgba(67, 0, 118, 0.502);
+        }
+    }
+}
+
+.home {
+    font-family: $primary-font;
+    display: flex;
+    flex-direction: column;
+
+    .fade {
+        animation-name: fadeInBottom;
+        animation-duration: 1s;
+    }
+
+    @keyframes fadeInBottom {
+        from {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .video-section {
+        position: relative;
+        text-align: center;
+        height: calc(3 * 100vh / 3);
+        /* Video takes up 1/3 of viewport height */
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            padding: 60px 0;
+            color: white;
+            font-size: 30px;
+            gap: 30px;
+
+            @media screen and (max-width: 768px) {
+                font-size: 20px;
+            }
+
+            .get-sheet-music-btn {
+                padding: 10px 20px;
+                border-radius: 5px;
+                border: none;
+                color: white;
+                background-color: $button-bg-color;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+                /* Adjust the value as needed for the desired space */
+                font-size: 1.3rem;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: $button-hover-color;
+                    transform: scale(1.1);
+                    transform: translateY(-3px);
+                    box-shadow: 0px 10px 20px rgba(67, 0, 118, 0.502);
+                }
+            }
+        }
+    }
+
+    .vision {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(2 * 100vh / 3);
+        background-color: #132067;
+
+        @media screen and (max-width: 768px) {
+            height: fit-content;
+        }
+
+        .vision-content {
+            display: flex;
+            flex-direction: row;
+            /* Change to row-reverse to align text to the right */
+            justify-content: space-between;
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+            }
+
+            .image {
+                flex: 1;
+                padding: 20px;
+                gap: 50px;
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+
+            .text {
+                flex: 1;
+                padding: 20px;
+                color: white;
+
+                h2 {
+                    font-size: 30px;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    font-size: 16px;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+
+    .join {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(2 * 100vh / 3);
+        background-color: #ffffff;
+
+        .join-content {
+            display: flex;
+            flex-direction: row-reverse;
+            /* Change to row-reverse to align text to the right */
+            justify-content: space-between;
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+            }
+
+            .image {
+                flex: 1;
+                padding: 20px;
+                gap: 50px;
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+
+            .text {
+                flex: 1;
+                padding: 20px;
+                color: black;
+
+                h2 {
+                    font-size: 30px;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    font-size: 16px;
+                    line-height: 1.5;
+                }
+
+                .helpList:nth-child(2) {
+                    animation-delay: 200ms;
+                }
+
+                .helpList:nth-child(3) {
+                    animation-delay: 400ms;
+                }
+
+                .helpList:nth-child(4) {
+                    animation-delay: 600ms;
+                }
+            }
+        }
+    }
+
+    .contributors-section {
+        background-color: purple;
+
+        .contributorTitle {
+            text-align: center;
+            margin-bottom: 30px;
+
+            h1 {
+                color: white;
+            }
+        }
+
+        .contributors {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: center;
+            gap: 30px;
+
+            @media screen and (max-width: 768px) {
+
+                /* On screens with a maximum width of 768px (e.g., tablets and smaller), use auto-fit for responsive layout */
+                flex-direction: column;
+            }
+
+            .contributor {
+                img {
+                    width: 250px;
+
+                    @media screen and (max-width: 1000px) {
+                        width: 100px;
+                    }
+                }
+
+                h2 {
+                    color: #fff;
+                }
+
+                p {
+                    color: #ffffff;
+                }
+            }
+
+            .contributor:nth-child(2) {
+                animation-delay: 200ms;
+            }
+
+            .contributor:nth-child(3) {
+                animation-delay: 400ms;
+            }
+
+            .contributor:nth-child(4) {
+                animation-delay: 600ms;
+            }
+        }
+    }
+}
+
+.navdiv {
+    font-family: $primary-font;
+    width: 100%;
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        /* Align items vertically in the middle */
+        background-color: purple;
+        padding: 10px;
+        width: 100%;
+
+        .navlist {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            /* Align items to the right */
+            gap: 10px;
+            margin-left: auto;
+            /* Push the list to the right */
+
+            a {
+                text-decoration: none;
+                color: #ffffff;
+            }
+        }
+
+        h1 {
+            color: #fff;
+            margin-right: auto;
+            /* Push the h1 to the left */
+
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        li {
+            list-style-type: none;
+            color: #ffffff;
+            margin: 0 10px;
+            cursor: pointer;
+
+            @media screen and (max-width: 768px) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+footer {
+    position: relative;
+}
+
+.footer {
+    width: 100%;
+    background-color: #222222;
+    position: relative;
+    bottom: 0;
+
+    p {
+        color: white;
+    }
+}
+
+.events {
+    font-family: $primary-font;
+
+    .hero {
+        text-align: center;
+        padding: 20px;
+
+        h1 {
+            font-size: 40px;
+        }
+    }
+
+    .upcoming {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(2 * 100vh / 3);
+        background-color: skyblue;
+
+        .upcoming-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            gap: 100px;
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                height: fit-content;
+            }
+
+            .image {
+                max-width: 25%; // Explicitly set maximum width for these divs
+                flex-basis: auto; // Override flex-basis to auto
+
+                img {
+                    width: 80%; // Image will scale according to the div
+                    height: auto;
+                }
+            }
+
+            .text {
+                padding: 30px;
+                color: black;
+
+                h2 {
+                    font-size: 40px;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    font-size: 20px;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+
+    .past {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(2 * 100vh / 3);
+        background-color: #ececec;
+
+        .past-content {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            gap: 150px;
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                height: fit-content;
+            }
+
+            .image {
+                max-width: 50%; // Explicitly set maximum width for these divs
+                flex-basis: auto; // Override flex-basis to auto
+
+                img {
+                    width: 100%; // Image will scale according to the div
+                    height: auto;
+                }
+            }
+
+            .text {
+                padding: 30px;
+                color: black;
+
+                h2 {
+                    font-size: 40px;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    font-size: 20px;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+
+    .future {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(2 * 100vh / 3);
+        background-color: #dcbfff;
+
+        .future-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            gap: 100px;
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                height: fit-content;
+            }
+
+            .image {
+                max-width: 25%; // Explicitly set maximum width for these divs
+                flex-basis: auto; // Override flex-basis to auto
+
+                img {
+                    width: 80%; // Image will scale according to the div
+                    height: auto;
+                }
+            }
+
+            .text {
+                padding: 30px;
+                color: black;
+
+                h2 {
+                    font-size: 40px;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    font-size: 20px;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+}
